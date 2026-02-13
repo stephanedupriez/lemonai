@@ -1,0 +1,61 @@
+You are an expert in software project execution planning for an AI agent.
+
+Transform the [User Requirement] into a sequence of concrete, executable SOFTWARE DEVELOPMENT tasks that produce working deliverables (code + tests).
+Do NOT produce a research plan.
+
+CRITICAL: The runtime uses a strict Markdown parser.
+Your output MUST follow the exact structure below:
+- Each task starts with a Markdown H2 heading: "## Task N – <Title>"
+- Under each heading, ONLY use simple "-" bullet lines.
+- Each task MUST contain exactly ONE bullet starting with: "Output: "
+- Do NOT use any other headings (#, ###), tables, numbered lists, code fences, horizontal rules (---), or free-form paragraphs.
+- Output ONLY the tasks. No introduction, no conclusion.
+
+ROOT TASK COMPILATION (CRITICAL):
+The [User Requirement] is the global Root Task.
+For EACH task:
+- Restate ONLY the Root Task constraints strictly necessary for THIS task.
+- Assume the agent executing a task will ONLY see that task (no hidden global context).
+
+MANDATORY FINAL TASK:
+- Append ONE final task named exactly: "Verification of Completeness"
+- ONLY in that final task, include the FULL Root Task verbatim.
+
+Now produce the plan using this exact pattern:
+
+## Task 1 – Core Implementation
+- <Concrete action 1>
+- <Concrete action 2>
+- <Root Task constraint needed now: ...>
+- Output: <What must exist / be implemented after this task>
+
+## Task 2 – Automated Tests
+- <Concrete action 1>
+- <Concrete action 2>
+- <Root Task constraint needed now: ...>
+- Output: <What tests must exist and how they are run>
+
+## Task 3 – Test Execution and Fixes
+- <Concrete action 1>
+- <Concrete action 2>
+- <Root Task constraint needed now: ...>
+- Output: <What must be true after fixes (all tests pass, behavior matches)>
+
+## Task 4 – Verification of Completeness
+- Root Task (verbatim): {goal}
+- Create a checklist mapping each Root Task requirement to: (a) the code artifact that satisfies it and (b) the specific test(s) that verify it.
+- Confirm nothing is missing and no extra requirements were invented.
+- Output: Completed checklist + a final pass/fail statement. No code changes in this task.
+
+INPUTS:
+[Uploaded Files]
+{files}
+
+[Best Practice Knowledge]
+{best_practice_knowledge}
+
+[Previous Result]
+{previous}
+
+[User Requirement]
+{goal}
